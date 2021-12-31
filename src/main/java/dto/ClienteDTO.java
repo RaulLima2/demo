@@ -3,17 +3,20 @@ package dto;
 import java.time.LocalDate;
 import java.util.List;
 
+import domain.Carro;
+import domain.Cliente;
+
 public class ClienteDTO {
     private String cpf;
     private String nome;
     private LocalDate dataNascimento;
-    private List<CarroDTO> carros;
+    private List<Carro> carros;
 
-    public ClienteDTO(String cpf, String nome, LocalDate dataNascimento, List<CarroDTO> carros) {
-        this.setCpf(cpf);
-        this.setNome(nome);
-        this.setDataNascimento(dataNascimento);
-        this.setCarros(carros);
+    public ClienteDTO(Cliente cliente) {
+        this.setCpf(cliente.getCpf());
+        this.setNome(cliente.getNome());
+        this.setDataNascimento(cliente.getDataNascimento());
+        this.setCarros(cliente.getCarros());
     }
 
     // Getter
@@ -29,7 +32,7 @@ public class ClienteDTO {
         return this.dataNascimento;
     }
 
-    public List<CarroDTO> getCarros() {
+    public List<Carro> getCarros() {
         return this.carros;
     }
 
@@ -46,7 +49,7 @@ public class ClienteDTO {
         this.dataNascimento = dataNascimento;
     }
 
-    public void setCarros(List<CarroDTO> carros) {
+    public void setCarros(List<Carro> carros) {
         this.carros = carros;
     }
 }

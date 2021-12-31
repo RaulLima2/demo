@@ -2,32 +2,42 @@ package dto;
 
 import java.util.List;
 
+import domain.Carro;
+import domain.Oficina;
+
 public class OficinaDTO {
     private Integer codigo;
     private String nome;
     private String especialidade;
     private String endereco;
-    private List<CarroDTO> carros;
+    private List<Carro> carros;
 
+    public OficinaDTO(Oficina oficina) {
+        this.setCodigo(oficina.getCodigo());
+        this.setNome(oficina.getNome());
+        this.setEspecialidade(oficina.getEspecialidade());
+        this.setEndereco(oficina.getEndereco());
+        this.setCarros(oficina.getCarros());
+    }
     // Getter
     public Integer getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public String getEspecialidade() {
-        return especialidade;
+        return this.especialidade;
     }
 
     public String getEndereco() {
-        return endereco;
+        return this.endereco;
     }
 
-    public List<CarroDTO> getCarros() {
-        return carros;
+    public List<Carro> getCarros() {
+        return this.carros;
     }
 
     // Setter
@@ -48,7 +58,7 @@ public class OficinaDTO {
         this.endereco = endereco;
     }
 
-    public void setCarros(List<CarroDTO> carros) {
+    public void setCarros(List<Carro> carros) {
         this.carros = carros;
     }
 }

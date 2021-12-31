@@ -1,22 +1,30 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Oficina")
-public class Oficina {
+@Table(name = "oficina")
+public class Oficina implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
     private String nome;
     private String especialidade;
     private String endereco;
+
+    @OneToMany(mappedBy = "carro", targetEntity = Carro.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Carro> carros;
 
     // Getter

@@ -1,41 +1,55 @@
 package dto;
 
+import domain.Carro;
+import domain.Cliente;
+import domain.Oficina;
+
 public class CarroDTO {
     private String placa;
     private String cor;
     private Integer ano;
     private Integer anoModelo;
     private String modelo;
-    private ClienteDTO cliente;
-    private OficinaDTO oficina;
+    
+    private Cliente cliente;
+    private Oficina oficina;
 
+    public CarroDTO(Carro carro) {
+        this.setPlaca(carro.getPlaca());
+        this.setCor(carro.getCor());
+        this.setAno(carro.getAno());
+        this.setAnoModelo(carro.getAnoModelo());
+        this.setModelo(carro.getModelo());
+        this.setCliente(carro.getCliente());
+        this.setOficina(carro.getOficina());
+    }
     // Getter
     public String getPlaca() {
-        return placa;
+        return this.placa;
     }
 
     public String getCor() {
-        return cor;
+        return this.cor;
     }
 
     public Integer getAno() {
-        return ano;
+        return this.ano;
     }
 
     public Integer getAnoModelo() {
-        return anoModelo;
+        return this.anoModelo;
     }
 
     public String getModelo() {
-        return modelo;
+        return this.modelo;
     }
 
-    public ClienteDTO getCliente() {
-        return cliente;
+    public Cliente getCliente() {
+        return this.cliente;
     }
 
-    public OficinaDTO getOficina() {
-        return oficina;
+    public Oficina getOficina() {
+        return this.oficina;
     }
     
     // Setter
@@ -59,11 +73,11 @@ public class CarroDTO {
         this.modelo = modelo;
     }
 
-    public void setCliente(ClienteDTO cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public void setOficina(OficinaDTO oficina) {
+    public void setOficina(Oficina oficina) {
         this.oficina = oficina;
     }
 }
