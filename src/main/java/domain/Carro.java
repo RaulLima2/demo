@@ -30,6 +30,20 @@ public class Carro implements Serializable{
     @ManyToOne
     @JoinColumn(name="codigo", nullable=true, updatable=true)
     private Oficina oficina;
+    
+    /**
+     * 
+     */
+    public Carro(String placa, String cor, Integer ano, Integer anoModelo, String modelo, Cliente cliente,
+            Oficina oficina) {
+        this.placa = placa;
+        this.cor = cor;
+        this.ano = ano;
+        this.anoModelo = anoModelo;
+        this.modelo = modelo;
+        this.cliente = cliente;
+        this.oficina = oficina;
+    }
 
     // Getter
     public String getPlaca() {

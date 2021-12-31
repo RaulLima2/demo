@@ -26,6 +26,14 @@ public class Oficina implements Serializable{
 
     @OneToMany(mappedBy = "carro", targetEntity = Carro.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Carro> carros;
+    
+    public Oficina(Integer codigo, String nome, String especialidade, String endereco, List<Carro> carros) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.especialidade = especialidade;
+        this.endereco = endereco;
+        this.carros = carros;
+    }
 
     // Getter
     public Integer getCodigo() {
